@@ -1,0 +1,100 @@
+D:\Repository Pattern\Repository Pattern\bin\Debug\Repository Pattern.exe.config
+D:\Repository Pattern\Repository Pattern\bin\Debug\Repository Pattern.exe
+D:\Repository Pattern\Repository Pattern\bin\Debug\Repository Pattern.pdb
+D:\Repository Pattern\Repository Pattern\bin\Debug\Azure.Core.dll
+D:\Repository Pattern\Repository Pattern\bin\Debug\Azure.Identity.dll
+D:\Repository Pattern\Repository Pattern\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Repository Pattern\Repository Pattern\bin\Debug\Microsoft.Bcl.Cryptography.dll
+D:\Repository Pattern\Repository Pattern\bin\Debug\Microsoft.Data.SqlClient.dll
+D:\Repository Pattern\Repository Pattern\bin\Debug\Microsoft.Extensions.Caching.Abstractions.dll
+D:\Repository Pattern\Repository Pattern\bin\Debug\Microsoft.Extensions.Caching.Memory.dll
+D:\Repository Pattern\Repository Pattern\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Repository Pattern\Repository Pattern\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Repository Pattern\Repository Pattern\bin\Debug\Microsoft.Extensions.Options.dll
+D:\Repository Pattern\Repository Pattern\bin\Debug\Microsoft.Extensions.Primitives.dll
+D:\Repository Pattern\Repository Pattern\bin\Debug\Microsoft.Identity.Client.dll
+D:\Repository Pattern\Repository Pattern\bin\Debug\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\Repository Pattern\Repository Pattern\bin\Debug\Microsoft.IdentityModel.Abstractions.dll
+D:\Repository Pattern\Repository Pattern\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Repository Pattern\Repository Pattern\bin\Debug\Microsoft.IdentityModel.Logging.dll
+D:\Repository Pattern\Repository Pattern\bin\Debug\Microsoft.IdentityModel.Protocols.dll
+D:\Repository Pattern\Repository Pattern\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Repository Pattern\Repository Pattern\bin\Debug\Microsoft.IdentityModel.Tokens.dll
+D:\Repository Pattern\Repository Pattern\bin\Debug\System.Buffers.dll
+D:\Repository Pattern\Repository Pattern\bin\Debug\System.ClientModel.dll
+D:\Repository Pattern\Repository Pattern\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+D:\Repository Pattern\Repository Pattern\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
+D:\Repository Pattern\Repository Pattern\bin\Debug\System.IO.FileSystem.AccessControl.dll
+D:\Repository Pattern\Repository Pattern\bin\Debug\System.Memory.Data.dll
+D:\Repository Pattern\Repository Pattern\bin\Debug\System.Memory.dll
+D:\Repository Pattern\Repository Pattern\bin\Debug\System.Numerics.Vectors.dll
+D:\Repository Pattern\Repository Pattern\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Repository Pattern\Repository Pattern\bin\Debug\System.Security.AccessControl.dll
+D:\Repository Pattern\Repository Pattern\bin\Debug\System.Security.Cryptography.Pkcs.dll
+D:\Repository Pattern\Repository Pattern\bin\Debug\System.Security.Cryptography.ProtectedData.dll
+D:\Repository Pattern\Repository Pattern\bin\Debug\System.Security.Principal.Windows.dll
+D:\Repository Pattern\Repository Pattern\bin\Debug\System.Text.Encodings.Web.dll
+D:\Repository Pattern\Repository Pattern\bin\Debug\System.Text.Json.dll
+D:\Repository Pattern\Repository Pattern\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\Repository Pattern\Repository Pattern\bin\Debug\System.ValueTuple.dll
+D:\Repository Pattern\Repository Pattern\bin\Debug\Azure.Core.xml
+D:\Repository Pattern\Repository Pattern\bin\Debug\Azure.Identity.xml
+D:\Repository Pattern\Repository Pattern\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\Repository Pattern\Repository Pattern\bin\Debug\Microsoft.Bcl.Cryptography.xml
+D:\Repository Pattern\Repository Pattern\bin\Debug\Microsoft.Data.SqlClient.xml
+D:\Repository Pattern\Repository Pattern\bin\Debug\Microsoft.Extensions.Caching.Abstractions.xml
+D:\Repository Pattern\Repository Pattern\bin\Debug\Microsoft.Extensions.Caching.Memory.xml
+D:\Repository Pattern\Repository Pattern\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\Repository Pattern\Repository Pattern\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+D:\Repository Pattern\Repository Pattern\bin\Debug\Microsoft.Extensions.Options.xml
+D:\Repository Pattern\Repository Pattern\bin\Debug\Microsoft.Extensions.Primitives.xml
+D:\Repository Pattern\Repository Pattern\bin\Debug\Microsoft.Identity.Client.xml
+D:\Repository Pattern\Repository Pattern\bin\Debug\Microsoft.Identity.Client.Extensions.Msal.xml
+D:\Repository Pattern\Repository Pattern\bin\Debug\Microsoft.IdentityModel.Abstractions.xml
+D:\Repository Pattern\Repository Pattern\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.xml
+D:\Repository Pattern\Repository Pattern\bin\Debug\Microsoft.IdentityModel.Logging.xml
+D:\Repository Pattern\Repository Pattern\bin\Debug\Microsoft.IdentityModel.Protocols.xml
+D:\Repository Pattern\Repository Pattern\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.xml
+D:\Repository Pattern\Repository Pattern\bin\Debug\Microsoft.IdentityModel.Tokens.xml
+D:\Repository Pattern\Repository Pattern\bin\Debug\System.Buffers.xml
+D:\Repository Pattern\Repository Pattern\bin\Debug\System.ClientModel.xml
+D:\Repository Pattern\Repository Pattern\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+D:\Repository Pattern\Repository Pattern\bin\Debug\System.IdentityModel.Tokens.Jwt.xml
+D:\Repository Pattern\Repository Pattern\bin\Debug\System.IO.FileSystem.AccessControl.xml
+D:\Repository Pattern\Repository Pattern\bin\Debug\System.Memory.xml
+D:\Repository Pattern\Repository Pattern\bin\Debug\System.Memory.Data.xml
+D:\Repository Pattern\Repository Pattern\bin\Debug\System.Numerics.Vectors.xml
+D:\Repository Pattern\Repository Pattern\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\Repository Pattern\Repository Pattern\bin\Debug\System.Security.AccessControl.xml
+D:\Repository Pattern\Repository Pattern\bin\Debug\System.Security.Cryptography.Pkcs.xml
+D:\Repository Pattern\Repository Pattern\bin\Debug\System.Security.Principal.Windows.xml
+D:\Repository Pattern\Repository Pattern\bin\Debug\System.Text.Encodings.Web.xml
+D:\Repository Pattern\Repository Pattern\bin\Debug\System.Text.Json.xml
+D:\Repository Pattern\Repository Pattern\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\Repository Pattern\Repository Pattern\bin\Debug\System.ValueTuple.xml
+D:\Repository Pattern\Repository Pattern\bin\Debug\cs\Microsoft.Data.SqlClient.resources.dll
+D:\Repository Pattern\Repository Pattern\bin\Debug\de\Microsoft.Data.SqlClient.resources.dll
+D:\Repository Pattern\Repository Pattern\bin\Debug\es\Microsoft.Data.SqlClient.resources.dll
+D:\Repository Pattern\Repository Pattern\bin\Debug\fr\Microsoft.Data.SqlClient.resources.dll
+D:\Repository Pattern\Repository Pattern\bin\Debug\it\Microsoft.Data.SqlClient.resources.dll
+D:\Repository Pattern\Repository Pattern\bin\Debug\ja\Microsoft.Data.SqlClient.resources.dll
+D:\Repository Pattern\Repository Pattern\bin\Debug\ko\Microsoft.Data.SqlClient.resources.dll
+D:\Repository Pattern\Repository Pattern\bin\Debug\pl\Microsoft.Data.SqlClient.resources.dll
+D:\Repository Pattern\Repository Pattern\bin\Debug\pt-BR\Microsoft.Data.SqlClient.resources.dll
+D:\Repository Pattern\Repository Pattern\bin\Debug\ru\Microsoft.Data.SqlClient.resources.dll
+D:\Repository Pattern\Repository Pattern\bin\Debug\tr\Microsoft.Data.SqlClient.resources.dll
+D:\Repository Pattern\Repository Pattern\bin\Debug\zh-Hans\Microsoft.Data.SqlClient.resources.dll
+D:\Repository Pattern\Repository Pattern\bin\Debug\zh-Hant\Microsoft.Data.SqlClient.resources.dll
+D:\Repository Pattern\Repository Pattern\obj\Debug\Repository Pattern.csproj.AssemblyReference.cache
+D:\Repository Pattern\Repository Pattern\obj\Debug\Repository_Pattern.Properties.Resources.resources
+D:\Repository Pattern\Repository Pattern\obj\Debug\Repository Pattern.csproj.GenerateResource.cache
+D:\Repository Pattern\Repository Pattern\obj\Debug\Repository Pattern.csproj.CoreCompileInputs.cache
+D:\Repository Pattern\Repository Pattern\obj\Debug\Reposito.7D84908E.Up2Date
+D:\Repository Pattern\Repository Pattern\obj\Debug\Repository Pattern.exe
+D:\Repository Pattern\Repository Pattern\obj\Debug\Repository Pattern.pdb
+D:\Repository Pattern\Repository Pattern\bin\Debug\EntityFramework.dll
+D:\Repository Pattern\Repository Pattern\bin\Debug\EntityFramework.SqlServer.dll
+D:\Repository Pattern\Repository Pattern\bin\Debug\EntityFramework.xml
+D:\Repository Pattern\Repository Pattern\bin\Debug\EntityFramework.SqlServer.xml
+D:\Repository Pattern\Repository Pattern\obj\Debug\Repository Pattern.exe.config
+D:\Repository Pattern\Repository Pattern\obj\Debug\Repository_Pattern.Form1.resources

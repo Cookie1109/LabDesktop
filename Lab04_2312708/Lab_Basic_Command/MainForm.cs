@@ -1,0 +1,354 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Data.SqlClient;
+
+namespace Lab_Basic_Command
+{
+    public partial class MainForm : Form
+    {
+        public MainForm()
+        {
+            InitializeComponent();
+        }
+
+        private const string CONNECTION_STRING = @"server=.; database=Lab04Desktop; integrated security=true;";
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            lblUserInfo.Text = $"Người dùng: {SessionManager.GetUserInfo()}";
+            
+            btnLoad.PerformClick();
+        }
+
+        private void btnLoad_Click(object sender, EventArgs e)
+        {
+            SqlConnection sqlConnection = new SqlConnection(CONNECTION_STRING);
+            SqlCommand sqlCommand = sqlConnection.CreateCommand();
+
+            sqlCommand.CommandText = "SELECT * FROM [Table] ORDER BY ID;";
+
+            sqlConnection.Open();
+
+            SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+
+            DisplayTable(sqlDataReader);
+
+            sqlConnection.Close();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            string tableName = "";
+            string status = "Trống";
+            string notes = "";
+
+            tableName = txtName.Text.Trim();
+            status = cboStatus.Text;
+            notes = txtNotes.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(tableName))
+            {
+                MessageBox.Show("Vui lòng nhập tên bàn");
+                txtName.Focus();
+                return;
+            }
+
+            SqlConnection sqlConnection = new SqlConnection(CONNECTION_STRING);
+            SqlCommand sqlCommand = sqlConnection.CreateCommand();
+
+            sqlCommand.CommandText = @"
+                INSERT INTO [Table](Name, Status, Notes) 
+                VALUES (@name, @status, @notes);
+            ";
+
+            sqlCommand.Parameters.AddWithValue("@name", tableName);
+            sqlCommand.Parameters.AddWithValue("@status", status);
+            sqlCommand.Parameters.AddWithValue("@notes", notes);
+
+            sqlConnection.Open();
+
+            int numOfRowAffected = sqlCommand.ExecuteNonQuery();
+
+            if (numOfRowAffected == 1)
+            {
+                MessageBox.Show("Thêm bàn thành công");
+                ClearForm();
+                btnLoad.PerformClick();
+            }
+            else
+            {
+                MessageBox.Show("Đã có lỗi xảy ra. Vui lòng thử lại");
+            }
+            sqlConnection.Close();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            int tableID = 0;
+            string tableName = "";
+            string status = "";
+            string notes = "";
+
+            tableID = int.Parse(txtID.Text);
+            tableName = txtName.Text.Trim();
+            status = cboStatus.Text;
+            notes = txtNotes.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(tableName))
+            {
+                MessageBox.Show("Vui lòng nhập tên bàn");
+                txtName.Focus();
+                return;
+            }
+
+            SqlConnection sqlConnection = new SqlConnection(CONNECTION_STRING);
+            SqlCommand sqlCommand = sqlConnection.CreateCommand();
+
+            sqlCommand.CommandText = @"
+                UPDATE [Table]
+                SET
+                    Name = @name,
+                    Status = @status,
+                    Notes = @notes
+                WHERE
+                    ID = @id;
+            ";
+
+            sqlCommand.Parameters.AddWithValue("@id", tableID);
+            sqlCommand.Parameters.AddWithValue("@name", tableName);
+            sqlCommand.Parameters.AddWithValue("@status", status);
+            sqlCommand.Parameters.AddWithValue("@notes", notes);
+
+            sqlConnection.Open();
+
+            int numOfRowAffected = sqlCommand.ExecuteNonQuery();
+
+            if (numOfRowAffected == 1)
+            {
+                MessageBox.Show("Cập nhật bàn thành công");
+                ClearForm();
+
+                btnUpdate.Enabled = false;
+                btnDelete.Enabled = false;
+
+                btnLoad.PerformClick();
+            }
+            else
+            {
+                MessageBox.Show("Đã có lỗi xảy ra. Vui lòng thử lại");
+            }
+            sqlConnection.Close();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            int tableID = 0;
+
+            tableID = int.Parse(txtID.Text);
+
+            DialogResult result = MessageBox.Show(
+                "Bạn có chắc chắn muốn xóa bàn này?",
+                "Xác nhận xóa",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+
+            if (result != DialogResult.Yes)
+            {
+                return;
+            }
+
+            SqlConnection sqlConnection = new SqlConnection(CONNECTION_STRING);
+            SqlCommand sqlCommand = sqlConnection.CreateCommand();
+
+            sqlCommand.CommandText = @"
+                DELETE FROM [Table]
+                WHERE ID = @id;
+            ";
+
+            sqlCommand.Parameters.AddWithValue("@id", tableID);
+
+            sqlConnection.Open();
+
+            int numOfRowAffected = sqlCommand.ExecuteNonQuery();
+
+            if (numOfRowAffected == 1)
+            {
+                MessageBox.Show("Xóa bàn thành công");
+
+                ClearForm();
+
+                btnUpdate.Enabled = false;
+                btnDelete.Enabled = false;
+
+                btnLoad.PerformClick();
+            }
+            else
+            {
+                MessageBox.Show("Đã có lỗi xảy ra. Vui lòng thử lại");
+            }
+            sqlConnection.Close();
+        }
+        private void DisplayTable(SqlDataReader sqlDataReader)
+        {
+            lvTable.Items.Clear();
+
+            while (sqlDataReader.Read())
+            {
+                ListViewItem item = new ListViewItem(sqlDataReader["ID"].ToString());
+
+                item.SubItems.Add(sqlDataReader["Name"].ToString());
+                item.SubItems.Add(sqlDataReader["Status"].ToString());
+                item.SubItems.Add(sqlDataReader["Notes"].ToString());
+
+                lvTable.Items.Add(item);
+            }
+        }
+
+        private void lvTable_Click(object sender, EventArgs e)
+        {
+            if (lvTable.SelectedItems.Count == 0) return;
+            var item = lvTable.SelectedItems[0];
+
+            txtID.Text = item.SubItems[0].Text;
+            txtName.Text = item.SubItems[1].Text;
+            cboStatus.Text = item.SubItems[2].Text;
+            txtNotes.Text = item.SubItems[3].Text;
+
+            btnUpdate.Enabled = true;
+            btnDelete.Enabled = true;
+        }
+
+        private void ClearForm()
+        {
+            txtID.Text = "";
+            txtName.Text = "";
+            cboStatus.SelectedIndex = 0;
+            txtNotes.Text = "";
+        }
+
+        private void tsmDelete_Click(object sender, EventArgs e)
+        {
+            if (lvTable.SelectedItems.Count > 0)
+                btnDelete.PerformClick();
+        }
+
+        private void tsmViewBills_Click(object sender, EventArgs e)
+        {
+            if (lvTable.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Vui lòng chọn bàn", "Thông báo", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            int tableID = int.Parse(lvTable.SelectedItems[0].SubItems[0].Text);
+            string tableName = lvTable.SelectedItems[0].SubItems[1].Text;
+
+            TableBillSummaryForm summaryForm = new TableBillSummaryForm(tableID, tableName);
+            summaryForm.Show();
+        }
+
+        private void tsmViewBillHistory_Click(object sender, EventArgs e)
+        {
+            if (lvTable.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Vui lòng chọn bàn", "Thông báo", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            int tableID = int.Parse(lvTable.SelectedItems[0].SubItems[0].Text);
+            string tableName = lvTable.SelectedItems[0].SubItems[1].Text;
+
+            TableBillHistoryForm historyForm = new TableBillHistoryForm(tableID, tableName);
+            historyForm.Show();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            ClearForm();
+            btnUpdate.Enabled = false;
+            btnDelete.Enabled = false;
+        }
+
+        private void menuCategory_Click(object sender, EventArgs e)
+        {
+            CategoryForm categoryForm = new CategoryForm();
+            categoryForm.Show();
+        }
+
+        private void menuFood_Click(object sender, EventArgs e)
+        {
+            FoodForm foodForm = new FoodForm();
+            foodForm.Show();
+        }
+
+        private void menuAccount_Click(object sender, EventArgs e)
+        {
+            AccountManager accountManager = new AccountManager();
+            accountManager.Show();
+        }
+
+        private void menuBill_Click(object sender, EventArgs e)
+        {
+            BillManager billManager = new BillManager();
+            billManager.Show();
+        }
+
+        private void menuExit_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show(
+                "Bạn có chắc chắn muốn thoát?",
+                "Xác nhận thoát",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void menuLogout_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show(
+                "Bạn có chắc chắn muốn đăng xuất?",
+                "Xác nhận đăng xuất",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+
+            if (result == DialogResult.Yes)
+            {
+                SessionManager.Logout();
+                
+                this.Close();
+                
+                LoginForm loginForm = new LoginForm();
+                if (loginForm.ShowDialog() == DialogResult.OK)
+                {
+                    SessionManager.Login(
+                        loginForm.LoggedInAccountID,
+                        loginForm.LoggedInUsername,
+                        loginForm.LoggedInDisplayName
+                    );
+                    MainForm newMainForm = new MainForm();
+                    newMainForm.Show();
+                }
+                else
+                {
+                    Application.Exit();
+                }
+            }
+        }
+    }
+}
